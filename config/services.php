@@ -33,31 +33,31 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'https://enggalmantun.id/auth/google/callback',
+        'redirect' => env('APP_URL').'/auth/google/callback',
     ],
 
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'https://enggalmantun.id/auth/github/callback',
+        'redirect' => env('APP_URL').'/auth/github/callback',
     ],
 
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => 'https://enggalmantun.id/auth/twitter/callback',
+        'redirect' => env('APP_URL').'/auth/twitter/callback',
     ],
 
     'linkedin' => [
         'client_id' => env('LINKEDIN_CLIENT_ID'),
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
-        'redirect' => 'https://enggalmantun.id/auth/linkedin/callback',
+        'redirect' => env('APP_URL').'/auth/linkedin/callback',
     ],
 
     'facebook' => [
         'client_id' => env('FACEBOOk_CLIENT_ID'),
         'client_secret' => env('FACEBOOk_CLIENT_SECRET'),
-        'redirect' => 'https://enggalmantun.id/auth/facebook/callback',
+        'redirect' => env('APP_URL').'/auth/facebook/callback',
     ],
 
 ];
