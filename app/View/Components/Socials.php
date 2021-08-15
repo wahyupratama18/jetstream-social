@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 
 class Socials extends Component
 {
+
+    public $driver;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +16,7 @@ class Socials extends Component
      */
     public function __construct()
     {
-        //
+        $this->driver = config('services.socials');
     }
 
     /**

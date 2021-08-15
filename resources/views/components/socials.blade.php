@@ -1,31 +1,31 @@
 <div class="grid grid-cols-1">
     <!-- The only way to do great work is to love what you do. - Steve Jobs -->
-    @if (Route::has('social.facebook.redirection'))    
-    <a href="{{ route('social.facebook.redirection') }}">
+    @if (in_array('facebook', $driver))
+    <a href="{{ route('social.redirection', ['driver' => 'facebook']) }}">
         Login dengan Facebook
     </a>
     @endif
     
-    @if (Route::has('social.twitter.redirection'))
-    <a href="{{ route('social.twitter.redirection') }}">
+    @if (in_array('twitter', $driver))
+    <a href="{{ route('social.redirection', ['driver' => 'twitter']) }}">
         Login dengan Twitter
     </a>
     @endif
     
-    @if (Route::has('social.linkedin.redirection'))
-    <a href="{{ route('social.linkedin.redirection') }}">
+    @if (in_array('linkedin', $driver))
+    <a href="{{ route('social.redirection', ['driver' => 'linkedin']) }}">
         Login dengan LinkedIn
     </a>
     @endif
     
-    @if (Route::has('social.google.redirection'))
-    <a href="{{ route('social.google.redirection') }}">
+    @if (in_array('google', $driver))
+    <a href="{{ route('social.redirection', ['driver' => 'google']) }}">
         Login dengan Google
     </a>
     @endif
     
-    @if (Route::has('social.github.redirection'))
-    <a href="{{ route('social.github.redirection') }}">
+    @if (in_array('github', $driver))
+    <a href="{{ route('social.redirection', ['driver' => 'github']) }}">
         Login dengan GitHub
     </a>
     @endif
