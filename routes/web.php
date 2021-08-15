@@ -1,12 +1,5 @@
 <?php
 
-use App\Http\Controllers\Auth\{
-    FacebookController,
-    GithubController,
-    GoogleController,
-    LinkedinController,
-    TwitterController
-};
 use Illuminate\Support\Facades\Route;
 
 /*
