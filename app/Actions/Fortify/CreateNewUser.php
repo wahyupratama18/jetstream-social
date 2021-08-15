@@ -2,14 +2,13 @@
 
 namespace App\Actions\Fortify;
 
-use App\Actions\Socialite\Login;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
 class CreateNewUser implements CreatesNewUsers
 {
-    use Login, PasswordValidationRules;
+    use CreateUser, PasswordValidationRules;
 
     /**
      * Create a newly registered user.

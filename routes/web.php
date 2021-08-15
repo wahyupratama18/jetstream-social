@@ -25,31 +25,12 @@ Route::get('/', function () {
 });
 
 // Social Auths
-Route::prefix('auth')->name('social.')->group(function () {
-    Route::prefix('google')->name('google.')->group(function () {
-        Route::get('/', [GoogleController::class, 'redirect'])->name('redirection');
-        Route::get('/callback', [GoogleController::class, 'callback'])->name('callback');
-    });
+Route::prefix('auth/{driver}')
+->name('social.')->group(function () {
     
-    Route::prefix('github')->name('github.')->group(function () {
-        Route::get('/', [GithubController::class, 'redirect'])->name('redirection');
-        Route::get('/callback', [GithubController::class, 'callback'])->name('callback');
-    });
-
-    Route::prefix('twitter')->name('twitter.')->group(function () {
-        Route::get('/', [TwitterController::class, 'redirect'])->name('redirection');
-        Route::get('/callback', [TwitterController::class, 'callback'])->name('callback');
-    });
-
-    Route::prefix('linkedin')->name('linkedin.')->group(function () {
-        Route::get('/', [LinkedinController::class, 'redirect'])->name('redirection');
-        Route::get('/callback', [LinkedinController::class, 'callback'])->name('callback');
-    });
-
-    Route::prefix('facebook')->name('facebook.')->group(function () {
-        Route::get('/', [FacebookController::class, 'redirect'])->name('redirection');
-        Route::get('/callback', [FacebookController::class, 'callback'])->name('callback');
-    });
+    Route::get('/', [SocialiteController::class, 'redirect'])->name('redirection')->where('driver', implode('|', config('services.socials')));
+    Route::get('/callback', [SocialiteController::class, 'callback'])->name('callback')->where('driver', implode('|', config('services.socials')));
+    
 });
 
 Route::middleware(['auth:sanctum', 'verified'])
